@@ -7,7 +7,3 @@ end
 ならば /^"(.*)"と表示されていること$/ do |text|
   page.should have_content(text)
 end
-
-
-- travis-ci
--- https://travis-ci.org/
