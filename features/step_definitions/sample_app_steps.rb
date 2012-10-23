@@ -1,14 +1,9 @@
 #encoding: utf-8
 
-もし /^トップページを表示する$/ do
-  visit '/'
+もし /^"(.*?)"ページを表示する$/ do |page_name|
+  visit human_to_url(page_name)
 end
 
-もし /^コンタクトページを表示する$/ do
-  visit '/contact'
-end
-
-
-ならば /^"(.*)"と表示されていること$/ do |text|
+ならば /^"(.*?)"と表示されていること$/ do |text|
   page.should have_content(text)
 end
